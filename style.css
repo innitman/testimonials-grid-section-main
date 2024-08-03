@@ -1,0 +1,59 @@
+@import url("reset.css");
+
+:root {
+  /* Colors */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* Spacing Sizes */
+  --spacing-base: 8px;
+  --spacing-1: (var(--spacing-base));
+  --spacing-2: calc(var(--spacing-base) * 3);
+  --spacing-3: calc(var(--spacing-base) * 3.75);
+  --spacing-4: calc(var(--spacing-base) * 4);
+  --spacing-5: calc(var(--spacing-base) * 9);
+}
+
+html {
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
+}
+
+body {
+  background-color: var(--light-grayish-blue);
+  color: var(--very-dark-blue);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1rem;
+}
+
+.center-grid {
+  display: grid;
+  place-content: center;
+  padding: var(--spacing-5) var(--spacing-4);
+  gap: var(--spacing-3) var(--spacing-2);
+}
+
+.card {
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+  border-radius: 8px;
+  padding: var(--spacing-4);
+}
+
+img {
+  border-radius: 28px;
+  object-fit: scale-down;
+  width: 28px;
+}
+
+.card:nth-child(1) {
+  grid-
+}
