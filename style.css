@@ -6,6 +6,7 @@
   --very-dark-grayish-blue: hsl(217, 19%, 35%);
   --very-dark-blackish-blue: hsl(219, 29%, 14%);
   --white: hsl(0, 0%, 100%);
+  --moderate-violet-semi: hsla(263, 55%, 52%, 0.5);
 
   /* Neutral */
   --light-gray: hsl(0, 0%, 81%);
@@ -14,6 +15,7 @@
   /* Spacing Sizes */
   --spacing-base: 8px;
   --spacing-1: (var(--spacing-base));
+  --spacing-1-5: calc(var(--spacing-base) * 2);
   --spacing-2: calc(var(--spacing-base) * 3);
   --spacing-3: calc(var(--spacing-base) * 3.75);
   --spacing-4: calc(var(--spacing-base) * 4);
@@ -32,28 +34,108 @@ body {
   background-color: var(--light-grayish-blue);
   color: var(--very-dark-blue);
   font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 1rem;
+  font-size: calc((13 / 16) * 1rem);
 }
 
 .center-grid {
   display: grid;
   place-content: center;
   padding: var(--spacing-5) var(--spacing-4);
-  gap: var(--spacing-3) var(--spacing-2);
+  gap: var(--spacing-2) var(--spacing-3);
+  grid-template-areas:
+    "first first second third"
+    "fourth fifth fifth third";
+  width: min(1150px, calc(100% - (2 * var(--spacing-4))));
+  margin: auto;
+
+  @media (max-width: 60rem) {
+    grid-template-areas:
+      "first"
+      "second"
+      "fourth"
+      "fifth"
+      "third";
+  }
 }
 
 .card {
   box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
   border-radius: 8px;
   padding: var(--spacing-4);
-}
 
-img {
-  border-radius: 28px;
-  object-fit: scale-down;
-  width: 28px;
+  .card-author {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    padding-block-end: var(--spacing-1-5);
+
+    img {
+      border-radius: 28px;
+      object-fit: scale-down;
+      width: 28px;
+    }
+  }
+
+  h1 {
+    padding-block-end: 4px;
+  }
+
+  h2 {
+    opacity: 0.5;
+    font-size: calc(11 / 16 * 1rem);
+  }
+
+  blockquote {
+    font-weight: 600;
+    font-size: calc(20 / 16 * 1rem);
+    padding-block-end: var(--spacing-1-5);
+  }
+
+  p {
+    opacity: 0.7;
+  }
 }
 
 .card:nth-child(1) {
-  grid-
+  grid-area: first;
+  color: white;
+  background-color: var(--moderate-violet);
+  background-image: url("images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+
+  img {
+    border: 4px solid hsl(264, 82%, 70%);
+    width: 36px;
+  }
+}
+
+.card:nth-child(2) {
+  grid-area: second;
+  color: white;
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.card:nth-child(3) {
+  grid-area: fourth;
+  color: var(--very-dark-blackish-blue);
+  background-color: white;
+}
+
+.card:nth-child(4) {
+  grid-area: fifth;
+  color: white;
+  background-color: var(--very-dark-blackish-blue);
+
+  img {
+    border: 4px solid hsl(264, 82%, 70%);
+    width: 36px;
+  }
+}
+
+.card:nth-child(5) {
+  grid-area: third;
+  color: var(--very-dark-blackish-blue);
+  background-color: white;
 }
