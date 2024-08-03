@@ -71,7 +71,7 @@ body {
     padding-block-end: var(--spacing-1-5);
 
     img {
-      border-radius: 28px;
+      border-radius: 50%;
       object-fit: scale-down;
       width: 28px;
     }
